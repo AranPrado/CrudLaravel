@@ -1,66 +1,44 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Projeto de Cadastro de Produtos
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este é um projeto de cadastro de produtos desenvolvido em Laravel. O sistema permite adicionar, editar e excluir produtos, bem como exibir uma lista de produtos cadastrados.
 
-## About Laravel
+## Tecnologias Utilizadas
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Laravel: Framework PHP utilizado para o desenvolvimento do backend da aplicação.
+- Tailwind CSS: Framework CSS utilizado para agilizar o desenvolvimento do frontend, com estilos pré-definidos e utilitários de classe.
+- Axios: Biblioteca JavaScript utilizada para fazer requisições HTTP.
+- SweetAlert2: Biblioteca JavaScript utilizada para exibir alertas e modais elegantes.
+- MySQL: Sistema de gerenciamento de banco de dados utilizado para armazenar os dados dos produtos.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Estrutura do Projeto
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- `index.blade.php`: Página de cadastro de produtos. Nessa página, é possível adicionar um novo produto fornecendo o nome, preço e quantidade.
 
-## Learning Laravel
+[![](https://github.com/AranPrado/CrudLaravel/blob/main/resources/views/assests/index2.png)](http://github.com/AranPrado/CrudLaravel/blob/main/resources/views/assests/index2.png)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- `showAll.blade.php`: Página de exibição dos produtos cadastrados. Nessa página, é exibida uma lista de produtos com seus detalhes, incluindo nome, quantidade, preço e data de criação. Também é possível editar ou excluir um produto.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+[![](https://github.com/AranPrado/CrudLaravel/blob/main/resources/views/assests/mostra2.png)](https://github.com/AranPrado/CrudLaravel/blob/main/resources/views/assests/mostra2.png)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- `edit.blade.php`: Página de edição de produto. Nessa página, é possível editar as informações de um produto existente, incluindo nome, preço e quantidade.
 
-## Laravel Sponsors
+[![](https://github.com/AranPrado/CrudLaravel/blob/main/resources/views/assests/edit2.png)](https://github.com/AranPrado/CrudLaravel/blob/main/resources/views/assests/edit2.png)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- `ProductsController.php`: Controlador responsável por lidar com as requisições relacionadas aos produtos. Ele contém métodos para criar, exibir, editar e excluir produtos.
+- `web.php`: Arquivo de rotas que define as rotas da aplicação, mapeando as URLs para os métodos correspondentes do controlador.
 
-### Premium Partners
+## Instruções de Uso
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+1. Faça o clone deste repositório para o seu ambiente local.
+2. Certifique-se de ter o Laravel e o MySQL instalados em sua máquina.
+3. Crie um banco de dados no MySQL.
+4. Configure as informações de conexão com o banco de dados no arquivo `.env`.
+5. Execute as migrações para criar as tabelas necessárias no banco de dados.
+6. Inicie o servidor PHP com o comando `php artisan serve`.
+7. Acesse a aplicação em seu navegador, utilizando a URL fornecida pelo servidor PHP.
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Esse é um exemplo de texto que descreve o projeto e as tecnologias utilizadas. Sinta-se à vontade para personalizá-lo de acordo com as características do seu projeto.
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Espero que isso ajude! Se você tiver mais alguma dúvida, estou aqui para ajudar.
