@@ -26,20 +26,27 @@
         <form method="POST" action="{{ route('products.store') }}">
 
             @csrf
+
             <div class="mb-4">
-                <label for="name" class="block font-bold">Nome do produto:</label>
+                <label for="user" class="block font-bold">Nome do usuario:</label>
+                <input type="text" name="user" id="user" placeholder="Minino de 3 caracteres"
+                    class="w-full p-2 border rounded">
+            </div>
+
+            <div class="mb-4">
+                <label for="name" class="block font-bold">Qual produto deseja cadastrar?</label>
                 <input type="text" name="name" id="name" placeholder="Ex: Mesa"
                     class="w-full p-2 border rounded">
             </div>
 
             <div class="mb-4">
-                <label for="price" class="block font-bold">Preço:</label>
+                <label for="price" class="block font-bold">Qual o preço do produto?</label>
                 <input type="text" name="price"  id="price" placeholder="R$..."
                     class="w-full p-2 border rounded">
             </div>
 
             <div class="mb-4">
-                <label for="quantity" class="block font-bold">Quantidade:</label>
+                <label for="quantity" class="block font-bold">Quantidade do produto que deseja adicionar?</label>
                 <input type="text" name="quantity" id="quantity" placeholder="QTD..."
                     class="w-full p-2 border rounded">
             </div>

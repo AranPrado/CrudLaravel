@@ -41,6 +41,7 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
+            'user' => 'required|min:3',
             'name' => 'required|min:3',
             'quantity' => 'required',
             'price' => 'required',
@@ -48,16 +49,18 @@ class ProductsController extends Controller
 
         if (!$validator->fails()) {
             $product = new Products();
+            $product->user = $request->user;
             $product->name = $request->name;
             $product->quantity = $request->quantity;
             $product->price = $request->price;
 
             if ($product->save()) {
+                $user = $request->input('user');
                 $name = $request->input('name');
                 $price = $request->input('price');
                 $quantity = $request->input('quantity');
 
-                session()->flash('success', 'Produto cadastrado com sucesso: ' . $name);
+                session()->flash('success', 'Produto ' . $name . ' cadastrado com sucesso por: ' . $user);
 
                 return redirect()->back();
             } else {

@@ -15,23 +15,29 @@
     <div class="flex justify-between my-2 px-4 py-2">
         <h1 class="text-3xl font-light">Meus produtos</h1>
         <div>
-            <a class="bg-cyan-700 py-2 px-5 rounded-lg text-white" href="{{ route('products.create') }}">Voltar ao cadastro</a>
+            <a class="bg-cyan-700 py-2 px-5 rounded-lg text-white" href="{{ route('products.create') }}">Voltar ao
+                cadastro</a>
         </div>
     </div>
     <hr>
-    
+
     <div class="my-4 mx-2">
         @php
             $total = 0;
         @endphp
-    
+
         @foreach ($products as $product)
             <div class="flex items-center justify-between bg-white rounded-lg shadow-md p-4 my-2">
                 <div>
-                    <h2 class="text-lg font-semibold">{{ $product->name }}</h2>
+                    <div class="flex">
+                        <h2 class="text-lg font-semibold ">{{ $product->name }}</h2>
+
+                        
+                    </div>
                     <p class="text-gray-600">Quantidade: {{ $product->quantity }}</p>
                     <p class="text-gray-600">Preço: R$ {{ number_format($product->price, 2, '.', '') }}</p>
                     <p class="text-gray-600">Criado em: {{ date('d/m/Y - H:i', strtotime($product->created_at)) }}</p>
+                    <p class="text-gray-600">Criado por: {{ $product->user }}</p>
                 </div>
                 <div>
                     <button class="text-red-600 hover:text-red-700" onclick="deleteProduct({{ $product->id }})"
@@ -57,11 +63,11 @@
                 $total += $product->price;
             @endphp
         @endforeach
-    
+
         <div class="mt-4 bg-white rounded-lg shadow-md p-4">
             <p class="text-lg font-semibold">Valor total: R$ {{ number_format($total, 2, '.', '') }}</p>
         </div>
-       
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
